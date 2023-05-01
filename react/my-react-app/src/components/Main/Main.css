@@ -1,0 +1,10 @@
+.div-main-class{
+    border:3px solid black;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.spinnerClass{
+    text-align: center;
+    padding:10px;
+}
