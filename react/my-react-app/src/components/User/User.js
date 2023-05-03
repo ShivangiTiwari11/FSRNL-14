@@ -2,10 +2,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './User.css'
 
-function User(props){
-  let data = props.userData;
+function User({userProp}){
+  let data = userProp.user;
   return (
-    <div className='user-div'>
+    <div onClick={()=>{userProp.onClick(data.id)}} className='user-div'>
          <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={data.picture} />
       <Card.Body>

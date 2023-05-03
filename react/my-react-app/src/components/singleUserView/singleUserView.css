@@ -1,0 +1,51 @@
+.single-user-parent{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    position : relative;
+}
+
+.single-user-div{
+    border: 1px solid black;
+    min-height: 400px;
+    min-width: 300px;
+    width: 80vw; 
+    display: flex;
+}
+
+.single-user-div-img{
+    border: 1px solid black;
+    flex:1;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-user-div-img img{
+   height: 75%;
+   width: 75%;
+   border: 1px solid black;
+}
+
+.single-user-div-details{
+    border: 1px solid black;
+    flex:2;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-user-div-details-inner{
+    height: 75%;
+    width: 75%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.btnClass{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}

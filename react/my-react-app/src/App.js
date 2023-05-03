@@ -14,7 +14,6 @@ class App extends React.Component {
     this.state={isLoggedIn:false};
   }
   onLogin(){
-    console.log("button clicked")
     this.setState({isLoggedIn:true});
   }
   render() {
