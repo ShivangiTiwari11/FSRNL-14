@@ -3,9 +3,9 @@ import User from '../User/User';
 import './UserList.css'
 
 
-function renderAllUsers({ data,onClick}) {
+function renderAllUsers({ data}) {
     return data.map(user => {
-        return <User key={user.id} userProp={{user, onClick}} />
+        return <User key={user.id} userProp={{user}} />
     })
 }
 

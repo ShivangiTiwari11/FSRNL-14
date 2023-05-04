@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 function LoginForm(props) {
   return (
@@ -22,9 +23,11 @@ function LoginForm(props) {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" onClick={props.loginHandler}>
+        <Link to="users">
+        <Button variant="primary">
           Submit
         </Button>
+        </Link>
       </Form>
     </div>
   );

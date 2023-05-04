@@ -2,7 +2,6 @@ import React from "react";
 import "./Main.css";
 import UserList from "../UserList/UserList";
 import SpinnerEx from "../common/spinner/spinner";
-import SingleUserView from "../singleUserView/singleUserView";
 
 class Main extends React.Component {
     allUserData =[]
@@ -13,7 +12,7 @@ class Main extends React.Component {
 
     
     resetData(){
-        this.setState({data:[],isLoading:true,searchValue:"", singleView:null}) 
+        this.setState({data:[],isLoading:true,searchValue:""}) 
     }
     updateData(){
         fetch("https://dummyapi.io/data/v1/user",{
@@ -52,7 +51,7 @@ class Main extends React.Component {
         return (
             <div className="div-main-class">
                 {
-                (!this.state.singleView)?(<>
+                <>
                  <h1>Applied Candidates</h1>
                <div>
                <input onChange={(e)=>this.onFieldValueChange(e)} type='text' ></input>
@@ -60,13 +59,10 @@ class Main extends React.Component {
                 {
                     (this.state.isLoading) ? <SpinnerEx className="spinnerClass"/> :
                     <> 
-                    <UserList userProps={{data:this.state.data, onClick:(id)=>this.onUserClick(id)}} />
+                    <UserList userProps={{data:this.state.data}} />
                     </> 
                 }
-                </> ):
-                 <>
-                <SingleUserView onBackClick={this.onBackButtonClick.bind(this)} id={this.state.singleView}/>
-                </>
+                </> 
             }
               
             </div>
