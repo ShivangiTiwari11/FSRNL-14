@@ -3,14 +3,18 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+const jwtMiddleware = require('./app/middleware/authJWT')
+require('dotenv').config()
+
 app.use(bodyParser.json());
 app.use(cors({
     origin: "*"
 }))
 
+app.use(jwtMiddleware);
 require('./app/routes/tutorial.route')(app);
 require('./app/routes/user.route')(app);
-
+require('./app/routes/auth.routes')(app);
 
 //qwerty123
 mongoose.connect("mongodb+srv://1998shivangit:qwerty123@cluster0.8amompz.mongodb.net/?retryWrites=true&w=majority");

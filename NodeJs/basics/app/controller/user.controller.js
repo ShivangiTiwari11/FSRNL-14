@@ -1,10 +1,10 @@
 
-const UserModel = require("../model/user.model");
+const userModel = require("../model/user.model");
 
 exports.findAll = (req, res)=>{
     const title = req.query.title;
     let condition = title? {title:{$regex : new RegExp(title)}} : {};
-    UserModel.find({})
+    userModel.find({})
     .then(data=>{
         res.send(data);
     }).catch(err=>{
@@ -16,7 +16,7 @@ exports.findAll = (req, res)=>{
 
 exports.findOne = (req, res)=>{
     const id = req.params.id;
-    UserModel.findById(id)
+    userModel.findById(id)
     .then(data=>{
         if(!data){
             res.status(404).send({message:`No Tutorial found with id ${id}`});
@@ -47,6 +47,6 @@ exports.create = (req, res)=>{
 
 exports.postsById = async (req, res)=>{
    const id = req.params.id;
-   const user = await UserModel.findById(id).populate("tutorials");
+   const user = await userModel.findById(id).populate("tutorials");
    res.send(user.tutorials);
 }
